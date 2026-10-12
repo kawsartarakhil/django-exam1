@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="main">
+    <h1>OUR MOVIES</h1>
+    {% for i in movies %}
+    <div class="movie_cards">
+        <a href="{% url 'movie_info' i.id %}"><img src="{{i.image.url}}" alt=""></a>
+        <span>
+            <p>{{i.age_range}}</p>
+            <p>{{i.genere}}</p>
+        </span>
+        <h1>{{i.title}}</h1>
+    </div>
+    {% endfor %}
+    <a href="{% url 'movie_create' %}"><button><h1>CREATE MOVIE</h1></button></a>
+</div>
+{% endblock %}
