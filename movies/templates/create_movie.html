@@ -10,17 +10,15 @@
     <input type="text" id="title" name="title">
     <br><br>
     <label for="duration">DURATION:</label>
-    <input type="duration" id="duration" name="duration">
+    <input type="number" id="duration" name="duration">
     <br><br>
     <label for="age_range">AGE RANGE:</label>
     <input type="number" name="age_range" id="age_range">
     <br><br>
-    <label for="duration">DURATION:</label>
-    <input type="number" id="duration" name="duration">
-    <br><br>
     <label for="image">IMAGE</label>
     <input type="file" id="image" name="image">
     <br><br>
+    <label for="genre">GENRE:</label>
     <select name="genre" id="genre">
         {% for i in genre %}
         <option value="{{i.id}}">{{i.genre}}</option>

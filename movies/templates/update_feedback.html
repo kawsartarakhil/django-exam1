@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Update Feedback{% endblock %}
+{% block content %}
+
+<h1>UPDATE FEEDBACK</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">NAME:</label>
+    <input type="text" id="name" name="name" value="{{ feedback.name }}">
+    <br><br>
+    <label for="text">COMMENT:</label>
+    <textarea id="text" name="text">{{ feedback.text }}</textarea>
+    <br><br>
+    <button type="submit">SAVE CHANGES</button>
+</form>
+
+<a href="{% url 'feedback' %}">CANCEL</a>
+
+{% endblock %}
