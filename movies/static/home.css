@@ -1,0 +1,56 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main {
+    text-align: center;
+    padding: 20px;
+}
+
+.main h1 {
+    color: #333;
+}
+
+.movie_cards {
+    display: inline-block;
+    width: 220px;
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #ddd;
+    vertical-align: top;
+}
+
+.movie_cards img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie_cards span {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+}
+
+.movie_cards h1 {
+    font-size: 22px;
+}
+
+button {
+    background-color: #33333392;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}

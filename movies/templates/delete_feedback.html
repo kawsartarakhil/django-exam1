@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Delete Feedback{% endblock %}
+{% load static %}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'info.css' %}">
+<div class="movie_info">
 <h1>DELETE FEEDBACK</h1>
 
 <p>Delete the comment from {{ feedback.name }}?</p>
@@ -9,9 +11,10 @@
 
 <form method="POST">
     {% csrf_token %}
-    <button type="submit">YES, DELETE</button>
+    <button type="submit" class="delete">YES, DELETE</button>
 </form>
 
-<a href="{% url 'feedback' %}">CANCEL</a>
+<a href="{% url 'feedback' %}"><button class="update">CANCEL</button></a>
+</div>
 
 {% endblock %}

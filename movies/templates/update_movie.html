@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}update{% endblock %}
 
 {% block content %}
-<h1>UPDATE A  MOVIE</h1>
-<form method="POST" enctype="multipart/form-data">
+<link rel="stylesheet" href="{% static 'info.css' %}">
+<div class="movie_info">
+    <h1>UPDATE A  MOVIE</h1>
+    <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="title">TITLE:</label>
     <input type="text" id="title" name="title" value="{{movie.title}}">
@@ -26,4 +29,5 @@
     </select>
     <button type="submit">UPDATE</button>
 </form>
+</div>
 {% endblock %}

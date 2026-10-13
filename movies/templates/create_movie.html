@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}create{% endblock %}
 
 {% block content %}
-<h1>CREATE A NEW MOVIE</h1>
+<link rel="stylesheet" href="{% static 'info.css' %}">
+
+<div class="movie_info">
+    <h1>CREATE A NEW MOVIE</h1>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="title">TITLE:</label>
@@ -24,6 +27,7 @@
         <option value="{{i.id}}">{{i.genre}}</option>
         {% endfor %}
     </select>
-    <button type="submit">CREATE</button>
+    <button type="submit" class="update">CREATE</button>
 </form>
+</div>
 {% endblock %}

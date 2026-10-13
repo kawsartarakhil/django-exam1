@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
 <div class="main">
     <h1>OUR MOVIES</h1>
     {% for i in movies %}
@@ -15,6 +16,6 @@
         <h1>{{i.title}}</h1>
     </div>
     {% endfor %}
-    <a href="{% url 'movie_create' %}"><button><h1>CREATE MOVIE</h1></button></a>
 </div>
+<a href="{% url 'movie_create' %}"><button><h1>CREATE MOVIE</h1></button></a>
 {% endblock %}

@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% block title %}Feedback{% endblock %}
+{% load static %}
 {% block content %}
-
-<h1>PEOPLE'S FEEDBACK</h1>
-
+<link rel="stylesheet" href="{% static 'feedback.css' %}">
+<div class="main">
+    <h1>PEOPLE'S FEEDBACK</h1>
 {% for i in feedbacks %}
 <div class="feedback">
     <h3>{{ i.name }}</h3>
     <p>{{ i.text }}</p>
-    <a href="{% url 'update_feedback' i.id %}"><button type="button">UPDATE</button></a>
-    <a href="{% url 'delete_feedback' i.id %}"><button type="button">DELETE</button></a>
+    <a href="{% url 'update_feedback' i.id %}"><button class="update">UPDATE</button></a>
+    <a href="{% url 'delete_feedback' i.id %}"><button class="delete">DELETE</button></a>
 </div>
 <hr>
 {% empty %}
 <p>No feedback yet.</p>
 {% endfor %}
+</div>
 
 {% endblock %}

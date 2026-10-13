@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Genre, Movie, Feedback
 
 
-def homeView(request):
+def homeView(request):git 
     movies = Movie.objects.all()
     return render(request, 'home.html', context={'movies': movies})
 

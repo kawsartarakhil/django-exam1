@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}Update Feedback{% endblock %}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'info.css' %}">
+<div class="movie_info">
 <h1>UPDATE FEEDBACK</h1>
-
 <form method="POST">
     {% csrf_token %}
     <label for="name">NAME:</label>
@@ -12,9 +14,10 @@
     <label for="text">COMMENT:</label>
     <textarea id="text" name="text">{{ feedback.text }}</textarea>
     <br><br>
-    <button type="submit">SAVE CHANGES</button>
+    <button type="submit" class="update">SAVE CHANGES</button>
 </form>
 
-<a href="{% url 'feedback' %}">CANCEL</a>
+<a href="{% url 'feedback' %}"><button class="delete">CANCEL</button></a>
+</div>
 
 {% endblock %}

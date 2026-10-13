@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Movie info{% endblock %}
 
 {% block content %}
-<h1>{{movie.title}}</h1>
-
+<link rel="stylesheet" href="{% static 'info.css' %}">
+<div class="movie_info">
 <img src="{{movie.image.url}}" alt="{{movie.title}}" width="200">
+<h1>{{movie.title}}</h1>
 <p>Duration: {{movie.duration}} minutes</p>
 <p>Age range: {{movie.age_range}}+</p>
 <p>Genre: {{movie.genre}}</p>
-<a href="{% url 'movie_update' movie.id %}"><button><h1>UPDATE MOVIE</h1></button></a>
-<a href="{% url 'movie_delete' movie.id %}"><button><h1>DELETE MOVIE</h1></button></a>
+<a href="{% url 'movie_update' movie.id %}"><button class="update"><h1>UPDATE MOVIE</h1></button></a>
+<a href="{% url 'movie_delete' movie.id %}"><button class="delete"><h1>DELETE MOVIE</h1></button></a>
+</div>
 {% endblock %}

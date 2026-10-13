@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}contact{% endblock %}
 
 {% block content %}
-<h1>CONTACT US</h1>
+<link rel="stylesheet" href="{% static 'contact.css' %}">
+<div class="contact">
+    <h1>CONTACT US</h1>
 <p>address: idkSomoniSTREET</p>
 
 <form method="POST" >
@@ -16,4 +18,5 @@
     <br><br>
     <button type="submit">SEND FEEDBACK</button>
 </form>
+</div>
 {% endblock %}
